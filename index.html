@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Price Forecasting</title>
+</head>
+
+<body bgcolor='black' text='white'>
+    <h1>
+        <b>
+            <i>
+                <font size=15>
+                    Electricity Price Forecasting
+                </font>
+            </i>
+        </b>
+    </h1>
+    <div style="background-color:white">
+        <hr>
+        <hr>
+    </div>
+    <h2>Enter the details to check electricity price forecast!</h2>
+    <h4>
+        <img src="https://hibar-research.org/wp-content/uploads/2019/11/placeholder-300x200.jpeg"
+            style="float: right; width: 50%; margin-left: 1%; margin-bottom: 0.5em;">
+
+        <form action="{{url_for('predict')}}" method="post">
+            <p>Time: <input type='text' name='time' placeholder='Enter time' required='required' /></p>
+            <p>Generation Biomass: <input type='text' name='generation_biomass' placeholder='Enter generation biomass' required='required' /></p>
+            <p>Generation Fossil Brown Coal/Lignite: <input type='text' name='generation_fossil_brown_coal' placeholder='Enter generation fossil brown coal' required='required'/></p>
+            <p>Generation Fossil Coal-Derived Gas: <input type='text' name='generation_fossil_coal_gas' placeholder='Enter generation fossil coal gas' required='required' /></p>
+            <p>Generation Fossil Gas: <input type='text' name='generation_fossil_gas' placeholder='Enter generation fossil gas' required='required' /></p>
+            <p>Generation Fossil Hard Coal: <input type='text' name='generation_fossil_hard_coal' placeholder='Enter generation fossil hard coal' required='required' /></p>
+            <p>Generation Fossil Oil: <input type='text' name='generation_fossil_oil' placeholder='Enter generation fossil oil' required='required' /></p>
+            <p>Generation Fossil Oil Shale: <input type='text' name='generation_fossil_oil_shale' placeholder='Enter generation fossil oil shale' required='required' /></p>
+            <p>Generation Fossil Peat: <input type='text' name='generation_fossil_peat' placeholder='Enter generation fossil peat' required='required' /></p>
+            <p>Generation Geothermal: <input type='text' name='generation_geothermal' placeholder='Enter generation geothermal' required='required' /></p>
+            <p>Generation Hydro Pumped Storage Aggregated: <input type='text' name='generation_hydro_pumped_storage_aggregated' placeholder='Enter generation hydro pumped storage aggregated' required='required' /></p>
+            <p>Generation Hydro Pumped Storage Consumption: <input type='text' name='generation_hydro_pumped_storage_consumption' placeholder='Enter generation hydro pumped storage consumption' required='required' /></p>
+            <p>Generation Hydro Run-of-River and Poundage: <input type='text' name='generation_hydro_run_of_river' placeholder='Enter generation hydro run of river' required='required' /></p>
+            <p>Generation Hydro Water Reservoir: <input type='text' name='generation_hydro_water_reservoir' placeholder='Enter generation hydro water reservoir' required='required' /></p>
+            <p>Generation Marine: <input type='text' name='generation_marine' placeholder='Enter generation marine' required='required' /></p>
+            <p>Generation Nuclear: <input type='text' name='generation_nuclear' placeholder='Enter generation nuclear' required='required' /></p>
+            <p>Generation Other: <input type='text' name='generation_other' placeholder='Enter generation other' required='required' /></p>
+            <p>Generation Other Renewable: <input type='text' name='generation_other_renewable' placeholder='Enter generation other renewable' required='required' /></p>
+            <p>Generation Solar: <input type='text' name='generation_solar' placeholder='Enter generation solar' required='required' /></p>
+            <p>Generation Waste: <input type='text' name='generation_waste' placeholder='Enter generation waste' required='required' /></p>
+            <p>Generation Wind Offshore: <input type='text' name='generation_wind_offshore' placeholder='Enter generation wind offshore' required='required' /></p>
+            <p>Generation Wind Onshore: <input type='text' name='generation_wind_onshore' placeholder='Enter generation wind onshore' required='required' /></p>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </h4>
+    <h2>
+        <b>
+            {{ prediction_text }}
+        </b>
+    </h2>
+</body>
+</html>
